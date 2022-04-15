@@ -1,6 +1,9 @@
 import './App.css';
+import Home from './Home';
+import About from './About';
 import NavBar from './components/NavBar';
-import itemContein from './components/itemList';
+import { BrowserRouter , Route, Routes } from 'react-router-dom';
+import itemContainer from './components/itemList';
 import itemList from './components/itemListContainer';
 
 
@@ -8,12 +11,12 @@ import itemList from './components/itemListContainer';
 function App() {
   return (
     <>
-    <div className='App'>
+    <BrowserRouter>
     <NavBar/>
-    <h2>Hola</h2>
     {
     itemList.map(item => 
-      <itemList
+      <itemContainer
+      key={item.id}
       thumbnail={item.thumbnail}
       brand={item.brand}
       size={item.size}
@@ -22,8 +25,14 @@ function App() {
       />
       )
     }
-    
+    <Routes>
+      <Route path='/' element={<Home />} />
+      <Route path='/About' element={<About />} />
+    <div className='App'>
+    <h2>Hola</h2>
     </div>
+    </Routes>
+    </BrowserRouter>
     </>
   );
 }

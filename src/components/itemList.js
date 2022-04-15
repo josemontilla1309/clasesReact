@@ -1,4 +1,4 @@
-const itemContein = (props) => {
+const itemContainer = (props) => {
     return (
         <>
         <div className="itemContein">
@@ -7,10 +7,9 @@ const itemContein = (props) => {
             <p>Marca: {props.brand}</p>
             <p>Talla: {props.size}</p>
             <h4>Precio: {props.price}</h4>
-            <button onClick={incrementPlus}>Like</button><button onClick={incrementMinus}>Dislike</button>
         </div>
         </>
     )
 }
 
-export default itemContein;
+export default itemContainer;
