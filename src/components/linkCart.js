@@ -1,11 +1,15 @@
 import { useState } from "react"
+import {CartContext} from "./CartContext";
+import { useContext } from "react";
 
 const linkCart = ({item}) => {
             const [itemCount, setItemCount] = useState(0);
+            const test = useContext(CartContext);
 
           const onAdd = (qty) =>{
               alert("Tienes selecionados" + qty + " items");
               setItemCount(qty);
+              test.addToCart(item);
           }
         
         };

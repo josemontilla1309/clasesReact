@@ -1,17 +1,20 @@
 import './App.css';
 import Home from './Home';
 import About from './About';
+import Cart from './Cart';
 import NavBar from './components/NavBar';
 import { BrowserRouter , Route, Routes } from 'react-router-dom';
-import itemContainer from './components/itemList';
-import itemList from './components/itemListContainer';
-import itemCount from './components/itemCount'
+import itemContainer from './components/ItemList';
+import itemList from './components/ItemListContainer';
+import itemCount from './components/ItemCount';
+import CartContext from './components/CartContext';
 
 
 
 function App() {
   return (
     <>
+    <CartContext.Provider>
     <BrowserRouter>
     <NavBar/>
     <itemCount />
@@ -36,6 +39,7 @@ function App() {
     </div>
     </Routes>
     </BrowserRouter>
+    </CartContext.Provider>
     </>
   );
 }
